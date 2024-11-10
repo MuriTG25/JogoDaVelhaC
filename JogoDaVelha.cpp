@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<conio.h>
 
 void mostraTitulo();
 void mostraInstrucoes();
@@ -14,6 +15,7 @@ int jogarNovamente();
 void mostraFinal();
 
 int main(){
+    //matriz 3x3 que armazena os valores do jogo
     int quadro [3][3];
     int contador = 0,jogador1=0,jogador2=0,resultado;
     do
@@ -39,23 +41,27 @@ void mostraTitulo(){
 
 //funcao que mostra as instrucoes do jogo
 void mostraInstrucoes() {
-    printf("===================================\n");
-    printf("          INSTRUÇÕES DO JOGO      \n");
-    printf("===================================\n");
-    printf("1. O jogo eh jogado por dois jogadores.\n");
-    printf("2. Um jogador eh 'X' e o outro eh 'O'.\n");
-    printf("3. O tabuleiro eh uma grade 3x3.\n");
-    printf("4. Os jogadores se alternam em suas jogadas.\n");
-    printf("5. Para fazer uma jogada, digite a linha e a coluna (0-2).\n");
-    printf("6. O objetivo e alinhar tres de suas marcas (X ou O) em uma linha.\n");
-    printf("   Isso pode ser feito:\n");
-    printf("   - Horizontalmente\n");
-    printf("   - Verticalmente\n");
-    printf("   - Diagonalmente\n");
-    printf("7. O jogo termina quando um jogador vence ou o tabuleiro esta cheio (empate).\n");
-    printf("8. Divirta-se!\n");
-    printf("===================================\n");
-   }
+    int mostraTutorial;
+    printf("Deseja mostrar o tutorial? 1 para Sim e 0 para Nao: ");
+    scanf("%d",&mostraTutorial);
+    if(mostraTutorial==1){
+        printf("===================================\n");
+        printf("          INSTRUCOES DO JOGO      \n");
+        printf("===================================\n");
+        printf("1. O jogo eh jogado por dois jogadores.\n");
+        printf("2. Um jogador eh 'X' e o outro eh 'O'.\n");
+        printf("3. O tabuleiro eh uma grade 3x3.\n");
+        printf("4. Os jogadores se alternam em suas jogadas.\n");
+        printf("5. Para fazer uma jogada, digite a linha e a coluna (0-2).\n");
+        printf("6. O objetivo e alinhar tres de suas marcas (X ou O) em uma linha.\n");
+        printf("   Isso pode ser feito:\n");
+        printf("   - Horizontalmente\n");
+        printf("   - Verticalmente\n");
+        printf("   - Diagonalmente\n");
+        printf("7. O jogo termina quando um jogador vence ou o tabuleiro esta cheio (empate).\n");
+        printf("8. Divirta-se!\n");
+        printf("===================================\n");
+    }
 }
 
 //inicia o tabuleiro colocando 0 em todas as casas
@@ -241,7 +247,7 @@ void mostraFinal(){
     printf("========================\n");
     printf("\nObrigado por jogar!\n");
     printf("========================\n");
-
+    getch();
 }
 
 
