@@ -34,9 +34,15 @@ int main(){
 
 //funcao que mostra o titulo do jogo
 void mostraTitulo(){
-  	printf("=======================================\n");
- 	printf("             JOGO DA VELHA             \n");
-  	printf("=======================================\n");
+    printf("#####   ######  #######   ######\n");
+    printf("    #   #    #  #         #    # \n");
+    printf("    #   #    #  #   ###   #    # \n");
+    printf("#   #   #    #  #     #   #    # \n");
+    printf("#####   ######  #######   ######\n");
+    //continue escrevendo "Jogo da Velha por MMS"
+  	// printf("=======================================\n");
+ 	// printf("             JOGO DA VELHA             \n");
+  	// printf("=======================================\n");
 	  }
 
 //funcao que mostra as instrucoes do jogo
@@ -244,9 +250,11 @@ int jogarNovamente(){
 void mostraFinal(){
     printf("\n========================\n");
     printf("       FIM DE JOGO      \n");
+    //também faca fim de jogo grande
     printf("========================\n");
     printf("\nObrigado por jogar!\n");
     printf("========================\n");
+    //coloca o MMS tambem grande
     getch();
 }
 
