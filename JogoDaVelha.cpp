@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<conio.h>
+#include <stdlib.h>
 
 void mostraTitulo();
 void mostraInstrucoes();
@@ -27,18 +28,18 @@ int main(){
         montaTabuleiro(quadro);
         placar(resultado,jogador1,jogador2);
         contador = jogarNovamente();
-    } while (contador);
+    } while (contador==1);
     mostraFinal();    
     return 0;
 }
 
 //funcao que mostra o titulo do jogo
 void mostraTitulo(){
-    printf("#####   ######  #######   ######\n");
-    printf("    #   #    #  #         #    # \n");
-    printf("    #   #    #  #   ###   #    # \n");
-    printf("#   #   #    #  #     #   #    # \n");
-    printf("#####   ######  #######   ######\n");
+    printf("\t\t\t#####   ######  #######   ######\n");
+    printf("\t\t\t    #   #    #  #         #    # \n");
+    printf("\t\t\t    #   #    #  #   ###   #    # \n");
+    printf("\t\t\t#   #   #    #  #     #   #    # \n");
+    printf("\t\t\t#####   ######  #######   ######\t\t\t\t\t\t\t por MMS\n");
     //continue escrevendo "Jogo da Velha por MMS"
   	// printf("=======================================\n");
  	// printf("             JOGO DA VELHA             \n");
@@ -67,6 +68,7 @@ void mostraInstrucoes() {
         printf("7. O jogo termina quando um jogador vence ou o tabuleiro esta cheio (empate).\n");
         printf("8. Divirta-se!\n");
         printf("===================================\n");
+        getch();
     }
 }
 
@@ -95,6 +97,7 @@ char preencheBloco(int bloco){
 
 //monta o tabuleiro todo
 void montaTabuleiro(int quadro[][3]){
+	system("cls");
     for (int linha = 0; linha < 3; linha++)
     {
         //talvez apagar as linhas anteriores quando for preencher um novo quadro
@@ -213,14 +216,12 @@ int jogo(int quadro[][3]){
         vitoria = checaVitoria(quadro);
    } while (continuar && !vitoria);
     if(vitoria==1){
-        printf("Jogador 1 ganhou!!!\n");
         return 1;
     } else if (vitoria==-1)
     {
-        printf("Jogador 2 ganhou!!!\n");
         return 2;
     } else{
-        printf("Empate\n");
+    	
     }
     return 0;
 }
@@ -229,11 +230,16 @@ int jogo(int quadro[][3]){
 void placar(int resultado, int &jogador1,int &jogador2){
     if(resultado==1){
         jogador1++;
+        printf("Jogador 1 ganhou!!!\n");
     }
-    if (resultado==2)
+    else if (resultado==2)
     {
         jogador2++;
+        printf("Jogador 2 ganhou!!!\n");
     }
+    else if(resultado==0){
+    	printf("Empate\n");
+	}
     printf("Placar: Jogador 1| %d X %d |Jogador 2",jogador1,jogador2);
 }
 
@@ -241,7 +247,7 @@ int jogarNovamente(){
     int contador;
     printf("\nDeseja jogar novamente?\n");
     printf("0- Nao\n");
-    printf("1- Jogar novamente ");
+    printf("1- Jogar novamente");
     scanf("%d",&contador);
     return contador;
 }
