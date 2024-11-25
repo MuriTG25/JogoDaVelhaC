@@ -66,7 +66,7 @@ void mostraTitulo(){
 //funcao que mostra as instrucoes do jogo
 void mostraInstrucoes() {
     int mostraTutorial;
-    printf("Deseja mostrar o tutorial? 1 para Sim e 0 para Nao: ");
+    printf("\n\nDeseja mostrar o tutorial? 1 para Sim e 0 para Nao: ");
     scanf("%d",&mostraTutorial);
     if(mostraTutorial==1){
         printf("===================================\n");
